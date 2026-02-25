@@ -39,4 +39,4 @@ The objective was to build and evaluate regression models, interpret coefficient
 
 ## Author
 Ruel Laranjo  
-Aspiring Data Scientist
+Junior Data Scientist
