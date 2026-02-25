@@ -1,0 +1,68 @@
+---
+title: "Regression Models Project"
+author: "Ruel Barredo Laranjo"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Executive Summary
+
+This analysis investigates whether manual or automatic transmissions lead to better fuel efficiency (MPG) using the mtcars dataset.
+
+The objective is to:
+1. Determine if transmission type affects MPG.
+2. Quantify the MPG difference between manual and automatic cars.
+
+Linear regression models will be used to evaluate the relationship.
+
+# Data Exploration
+
+```{r}
+data(mtcars)
+head(mtcars)
+```
+
+# Regression Analysis
+
+```{r}
+model1 <- lm(mpg ~ am, data = mtcars)
+summary(model1)
+```
+
+The coefficient for am represents the average difference in MPG between manual and automatic cars. A positive coefficient indicates that manual transmission cars have higher fuel efficiency compared to automatic cars.
+
+```{r}
+model2 <- lm(mpg ~ am + wt + hp, data = mtcars)
+summary(model2)
+```
+
+Model 2 adjusts for weight (wt) and horsepower (hp). Comparing the adjusted R-squared values suggests that Model 2 explains more variability in MPG and provides a better fit than Model 1.
+
+```{r}
+par(mfrow=c(2,2))
+plot(model2)
+```
+
+The residual plots do not show strong systematic patterns, suggesting that the assumptions of linear regression are reasonably satisfied.
+
+
+```{r}
+confint(model2)
+```
+
+
+The confidence interval for the am coefficient indicates the range of plausible values for the MPG difference between transmission types. If the interval does not include zero, the effect is statistically significant.
+
+
+
+
+
+
+
+
+
+
