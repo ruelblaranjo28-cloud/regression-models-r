@@ -1,50 +1,46 @@
 # Regression Models in R
 
-## Project Overview
-This project applies linear regression techniques and statistical inference 
-to analyze relationships between variables using R.
+## Overview
 
-It includes model building, diagnostic testing, residual analysis, and 
-interpretation of statistical results to evaluate model performance.
+This project applies linear regression techniques and statistical inference using R to analyze relationships between variables.
 
----
+The analysis focuses on model building, coefficient interpretation, hypothesis testing, and diagnostic evaluation to assess model performance and validity.
 
 ## Dataset
 
-This analysis uses the built-in `mtcars` dataset in R. The dataset contains automobile performance data from the 1974 Motor Trend magazine, including variables such as miles per gallon (MPG), horsepower, weight, and transmission type.
+The project uses the built-in `mtcars` dataset in R, which contains automobile performance data including:
 
-Although the dataset is historical, it is widely used for demonstrating regression modeling and statistical inference techniques.
+- Miles per gallon (MPG)
+- Horsepower
+- Weight
+- Transmission type
+
+Although historical, the dataset is widely used for demonstrating regression modeling and statistical concepts.
 
 ## Methods Used
-- Linear Regression
-- Model diagnostics
-- Residual analysis
-- Interpretation of regression coefficients
-- Hypothesis testing
 
----
+- Simple Linear Regression
+- Multiple Linear Regression
+- Residual Analysis
+- Diagnostic Plots
+- Statistical Significance Testing
 
-## Tools & Technologies
+## Skills Demonstrated
+
+- Statistical Modeling
+- Regression Analysis
+- Data Interpretation
+- Hypothesis Testing
+- R Programming
+
+## Tools Used
+
 - R
-- R Markdown
-- Statistical Inference techniques
-
----
-
-## Key Learnings
-- Understanding regression assumptions
-- Evaluating model performance
-- Interpreting p-values and confidence intervals
-- Applying statistical reasoning to real data
-
----
-
-## Project Files
-- `Regression_Models_Project_Ruel_Barredo_Laranjo.pdf` – Final report
-
-
----
+- RStudio
+- Base R Functions
+- Git & GitHub
 
 ## Author
+
 Ruel Laranjo  
 Junior Data Scientist
