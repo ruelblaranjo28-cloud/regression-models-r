@@ -7,10 +7,12 @@ The analysis focuses on model building, interpretation of coefficients, statisti
 
 ---
 
-
 ## Dataset
 
-The analysis uses the built-in `mtcars` dataset in R, which contains automobile performance data from the 1974 Motor Trend magazine.
+This analysis uses the built-in `mtcars` dataset in R. The dataset contains automobile performance data from the 1974 Motor Trend magazine, including variables such as miles per gallon (MPG), horsepower, weight, and transmission type.
+
+Although the dataset is historical, it is widely used for demonstrating regression modeling and statistical inference techniques.
+
 ## Methods Used
 - Linear Regression
 - Model diagnostics
