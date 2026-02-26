@@ -1,9 +1,11 @@
 # Regression Models in R
 
 ## Project Overview
-This project applies linear regression analysis using R to explore relationships between automobile characteristics and fuel efficiency. 
+This project applies linear regression techniques and statistical inference 
+to analyze relationships between variables using R.
 
-The analysis focuses on model building, interpretation of coefficients, statistical significance testing, and validation of regression assumptions through diagnostic plots.
+It includes model building, diagnostic testing, residual analysis, and 
+interpretation of statistical results to evaluate model performance.
 
 ---
 
