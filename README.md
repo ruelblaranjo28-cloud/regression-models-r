@@ -1,12 +1,16 @@
 # Regression Models in R
 
 ## Project Overview
-This project demonstrates regression analysis using R as part of the Johns Hopkins University Data Science Specialization via Coursera.
+This project applies linear regression analysis using R to explore relationships between automobile characteristics and fuel efficiency. 
 
-The objective was to build and evaluate regression models, interpret coefficients, and analyze statistical significance.
+The analysis focuses on model building, interpretation of coefficients, statistical significance testing, and validation of regression assumptions through diagnostic plots.
 
 ---
 
+
+## Dataset
+
+The analysis uses the built-in `mtcars` dataset in R, which contains automobile performance data from the 1974 Motor Trend magazine.
 ## Methods Used
 - Linear Regression
 - Model diagnostics
@@ -33,7 +37,7 @@ The objective was to build and evaluate regression models, interpret coefficient
 
 ## Project Files
 - `Regression_Models_Project_Ruel_Barredo_Laranjo.pdf` – Final report
-- (R script file will be added)
+
 
 ---
 
