@@ -36,7 +36,7 @@ Using the mtcars dataset, linear regression models were applied to understand th
 
 This plot shows the relationship between vehicle weight and fuel efficiency (MPG), grouped by transmission type.
 
-![MPG vs Weight](mpg_plot.png1)
+![MPG vs Weight](mpg_plot1.png)
 
 ---
 
