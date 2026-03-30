@@ -6,96 +6,90 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 
----
 
 #Executive Summary
+
 This project analyzes whether transmission type (manual vs automatic) has a significant impact on fuel efficiency (miles per gallon, MPG).
+
 Using the mtcars dataset, linear regression models are applied to quantify the relationship between transmission type and MPG.
+
 The results suggest that manual transmission vehicles tend to have higher fuel efficiency compared to automatic vehicles. However, this relationship is influenced by other factors such as vehicle weight and horsepower.
+
 This analysis demonstrates how regression modeling can be used to identify key variables affecting performance and support data-driven decision-making.
 
----
 #Data Exploration
-
-'''{r}
 data(mtcars)
 head(mtcars)
+
 The dataset contains information about fuel efficiency (MPG), engine characteristics, and transmission type.
+
 Key variables include:
+
 mpg: Miles per gallon (fuel efficiency)
 am: Transmission type (0 = automatic, 1 = manual)
 wt: Weight of the car
 hp: Horsepower
 
----
-
-#Regression Analysis
-
+Regression Analysis
 Model 1
-
-'''{r}
 model1 <- lm(mpg ~ am, data = mtcars)
 summary(model1)
+
 The coefficient for am represents the average difference in MPG between manual and automatic cars.
-A positive coefficient indicates that manual cars tend to have higher fuel efficiency compared to automatic cars.
+A positive coefficient indicates that manual cars tend to have higher fuel efficiency.
 
 Model 2
-
-'''{r}
 model2 <- lm(mpg ~ am + wt + hp, data = mtcars)
 summary(model2)
+
 Model 2 includes weight and horsepower as additional predictors.
-The results show that weight and horsepower have a significant impact on MPG. After including these variables, the effect of transmission type becomes smaller, suggesting that differences in fuel efficiency are partly explained by vehicle characteristics.
+The results show that weight and horsepower have a significant impact on MPG.
 
----
-#📊 Model Diagnostics
+After including these variables, the effect of transmission type becomes smaller, suggesting that differences in fuel efficiency are partly explained by vehicle characteristics.
 
-'''{r}
-par(mfrow=c(2,2))
+#Model Diagnostics
+par(mfrow = c(2,2))
 plot(model2)
+Interpretation
+Residuals vs Fitted: No clear pattern → linearity assumption satisfied
+Normal Q-Q: Residuals are approximately normally distributed
+Scale-Location: Variance appears constant
+Residuals vs Leverage: No strong influential points
 
----
-#📊 Model Diagnostics Interpretation
-The Residuals vs Fitted plot shows no clear pattern, suggesting that the linearity assumption is reasonably satisfied.
-The Normal Q-Q plot indicates that residuals are approximately normally distributed.
-The Scale-Location plot suggests that the variance of residuals is relatively constant.
-The Residuals vs Leverage plot shows no strong influential points.
-Overall, the regression assumptions are reasonably satisfied.
+Overall, regression assumptions are reasonably satisfied.
 
----
-
-#📊 Visualization
-
-'''{r}
+#Visualization
 ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 3) +
   geom_smooth(method = "lm") +
-  labs(title = "MPG vs Weight by Transmission Type",
-       x = "Weight",
-       y = "Miles per Gallon",
-       color = "Transmission")
-This plot shows that MPG decreases as vehicle weight increases. Manual cars tend to have slightly higher MPG compared to automatic cars, although weight has a stronger effect on fuel efficiency.
+  labs(
+    title = "MPG vs Weight by Transmission Type",
+    x = "Weight",
+    y = "Miles per Gallon",
+    color = "Transmission"
+  )
 
----
+This plot shows that MPG decreases as vehicle weight increases.
+Manual cars tend to have slightly higher MPG compared to automatic cars, although weight has a stronger effect.
+
 #Confidence Intervals
-
-'''{r}
 confint(model2)
+
 The confidence intervals provide a range of plausible values for each coefficient.
-If the confidence interval for a variable does not include zero, the variable is considered statistically significant.
-Conclusion
-This analysis shows that transmission type has an effect on fuel efficiency, with manual cars generally achieving higher MPG than automatic cars.
-However, when additional variables such as weight and horsepower are included, the effect of transmission type becomes less pronounced.
-This indicates that vehicle characteristics play a significant role in determining fuel efficiency.
-Overall, this project demonstrates the importance of using multiple variables in regression analysis to obtain more accurate and meaningful insights from data.
+If an interval does not include zero, the variable is statistically significant.
 
----
+#Conclusion
 
+Transmission type has an effect on fuel efficiency, with manual cars generally achieving higher MPG.
 
+However, when weight and horsepower are included, the effect of transmission becomes less pronounced.
+
+This indicates that vehicle characteristics play a major role in fuel efficiency.
+
+Overall, this project highlights the importance of using multiple variables in regression analysis to obtain more accurate insights.
 
 
 
