@@ -11,13 +11,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Executive Summary
 
-This analysis investigates whether manual or automatic transmissions lead to better fuel efficiency (MPG) using the mtcars dataset.
+This project analyzes whether transmission type (manual vs automatic) has a significant impact on fuel efficiency (miles per gallon, MPG). Using the mtcars dataset, a linear regression model was applied to quantify the relationship between transmission type and MPG.
 
-The objective is to:
-1. Determine if transmission type affects MPG.
-2. Quantify the MPG difference between manual and automatic cars.
+The results suggest that manual transmission vehicles tend to have higher fuel efficiency compared to automatic vehicles. However, this relationship is influenced by other factors such as vehicle weight and horsepower.
 
-Linear regression models will be used to evaluate the relationship.
+This analysis demonstrates how regression modeling can be used to identify key variables affecting performance and support data-driven decision-making.
+
+# Interpretation of Results
+
+The regression model indicates that transmission type has a measurable effect on fuel efficiency. Manual cars generally show higher MPG values compared to automatic cars.
+
+However, when additional variables such as weight and horsepower are included, the difference between transmission types becomes less pronounced. This suggests that vehicle characteristics play a significant role in determining fuel efficiency.
+
+Overall, the model highlights the importance of considering multiple variables when analyzing real-world data.
 
 # Data Exploration
 
@@ -54,10 +60,15 @@ The residual plots do not show strong systematic patterns, suggesting that the a
 confint(model2)
 ```
 
-
 The confidence interval for the am coefficient indicates the range of plausible values for the MPG difference between transmission types. If the interval does not include zero, the effect is statistically significant.
 
+# Conclusion
 
+This analysis shows that transmission type has an impact on fuel efficiency, with manual vehicles generally achieving higher MPG than automatic vehicles.
+
+However, the results also indicate that other factors such as vehicle weight and horsepower significantly influence fuel efficiency. When these variables are included in the model, the effect of transmission type becomes less dominant.
+
+Overall, this project demonstrates the importance of using multiple variables in regression analysis to obtain more accurate and meaningful insights from data.
 
 
 
