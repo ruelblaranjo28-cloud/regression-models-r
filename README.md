@@ -32,6 +32,13 @@ Using the mtcars dataset, linear regression models were applied to understand th
 - `regression_project.html` → Final report
 
 ---
+## 📊 Visualization
+
+This plot shows the relationship between vehicle weight and fuel efficiency (MPG), grouped by transmission type.
+
+![MPG vs Weight](mpg_plot.png1)
+
+---
 
 ## 🚀 Conclusion
 This project shows how regression models help identify key factors affecting performance and support data-driven decisions.
