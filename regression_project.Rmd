@@ -21,7 +21,7 @@ This analysis demonstrates how regression modeling can be used to identify key v
 ---
 #Data Exploration
 
-{r}
+'''{r}
 data(mtcars)
 head(mtcars)
 The dataset contains information about fuel efficiency (MPG), engine characteristics, and transmission type.
@@ -34,14 +34,14 @@ hp: Horsepower
 #Regression Analysis
 Model 1
 
-{r}
+'''{r}
 model1 <- lm(mpg ~ am, data = mtcars)
 summary(model1)
 The coefficient for am represents the average difference in MPG between manual and automatic cars.
 A positive coefficient indicates that manual cars tend to have higher fuel efficiency compared to automatic cars.
 Model 2
 
-{r}
+'''{r}
 model2 <- lm(mpg ~ am + wt + hp, data = mtcars)
 summary(model2)
 Model 2 includes weight and horsepower as additional predictors.
@@ -50,7 +50,7 @@ The results show that weight and horsepower have a significant impact on MPG. Af
 
 #📊 Model Diagnostics
 
-{r}
+'''{r}
 par(mfrow=c(2,2))
 plot(model2)
 
@@ -65,7 +65,7 @@ Overall, the regression assumptions are reasonably satisfied.
 
 #📊 Visualization
 
-{r}
+'''{r}
 ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 3) +
   geom_smooth(method = "lm") +
@@ -77,7 +77,7 @@ This plot shows that MPG decreases as vehicle weight increases. Manual cars tend
 
 #Confidence Intervals
 
-{r}
+'''{r}
 confint(model2)
 The confidence intervals provide a range of plausible values for each coefficient.
 If the confidence interval for a variable does not include zero, the variable is considered statistically significant.
