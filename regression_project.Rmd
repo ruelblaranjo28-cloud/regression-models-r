@@ -1,0 +1,99 @@
+---
+title: "Regression Models Project"
+author: "Ruel Laranjo | Aspiring Data Scientist"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+# Executive Summary
+
+This project analyzes whether transmission type (manual vs automatic) has a significant impact on fuel efficiency (miles per gallon, MPG). Using the mtcars dataset, linear regression models are applied to quantify the relationship between transmission type and MPG.
+
+The initial results suggest that manual transmission vehicles tend to have higher fuel efficiency compared to automatic vehicles. However, when additional variables such as vehicle weight and horsepower are included, the effect of transmission type becomes less pronounced.
+
+This analysis highlights that vehicle characteristics, particularly weight, play a more important role in determining fuel efficiency. Overall, the project demonstrates how regression modeling can be used to identify key variables influencing performance and support data-driven decision-making.
+
+# Data Exploration
+
+```{r}
+data(mtcars)
+head(mtcars)
+```
+The dataset contains information about fuel efficiency (MPG), engine characteristics, and transmission type.
+Key variables include:
+mpg: Miles per gallon (fuel efficiency)
+am: Transmission type (0 = automatic, 1 = manual)
+wt: Weight of the car
+hp: Horsepower
+
+# Regression Analysis
+
+```{r}
+model1 <- lm(mpg ~ am, data = mtcars)
+summary(model1)
+```
+
+The coefficient for am represents the average difference in MPG between manual and automatic cars. A positive coefficient indicates that manual transmission cars have higher fuel efficiency compared to automatic cars.
+
+```{r}
+model2 <- lm(mpg ~ am + wt + hp, data = mtcars)
+summary(model2)
+```
+
+Model 2 adjusts for weight (wt) and horsepower (hp). Comparing the adjusted R-squared values suggests that Model 2 explains more variability in MPG and provides a better fit than Model 1.
+
+# 📊 Model Diagnostics
+```{r}
+par(mfrow=c(2,2))
+plot(model2)
+```
+
+# 📊 Model Diagnostics Interpretation
+The Residuals vs Fitted plot shows no clear pattern, suggesting that the linearity assumption is reasonably satisfied.
+The Normal Q-Q plot indicates that residuals are approximately normally distributed.
+The Scale-Location plot suggests that the variance of residuals is relatively constant.
+The Residuals vs Leverage plot shows no strong influential points.
+Overall, the regression assumptions are reasonably satisfied.
+
+
+# 📊 Visualization
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
+  geom_point(size = 3) +
+  geom_smooth(method = "lm") +
+  labs(title = "MPG vs Weight by Transmission Type",
+       x = "Weight",
+       y = "Miles per Gallon",
+       color = "Transmission")
+```
+This plot shows a negative relationship between vehicle weight and fuel efficiency (MPG), meaning that heavier cars tend to have lower MPG. Manual transmission vehicles generally exhibit slightly higher MPG than automatic vehicles, although vehicle weight has a stronger overall impact on fuel efficiency.
+
+
+### Confidence Intervals
+
+The confidence intervals provide a range of plausible values for each coefficient. If the interval does not include zero, the variable is considered statistically significant.
+```{r}
+confint(model2)
+```
+
+The confidence intervals provide a range of plausible values for each coefficient.
+If the confidence interval for a variable does not include zero, the variable is considered statistically significant.
+
+
+
+# Conclusion
+This analysis shows that transmission type has an effect on fuel efficiency, with manual cars generally achieving higher MPG than automatic cars.
+However, when additional variables such as weight and horsepower are included, the effect of transmission type becomes less pronounced.
+This indicates that vehicle characteristics play a significant role in determining fuel efficiency.
+Overall, this project demonstrates the importance of using multiple variables in regression analysis to obtain more accurate and meaningful insights from data.
+
+
+
+
+
+
