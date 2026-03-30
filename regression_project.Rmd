@@ -12,14 +12,14 @@ library(ggplot2)
 
 ---
 
-Executive Summary
+#Executive Summary
 This project analyzes whether transmission type (manual vs automatic) has a significant impact on fuel efficiency (miles per gallon, MPG).
 Using the mtcars dataset, linear regression models are applied to quantify the relationship between transmission type and MPG.
 The results suggest that manual transmission vehicles tend to have higher fuel efficiency compared to automatic vehicles. However, this relationship is influenced by other factors such as vehicle weight and horsepower.
 This analysis demonstrates how regression modeling can be used to identify key variables affecting performance and support data-driven decision-making.
 
 ---
-Data Exploration
+#Data Exploration
 
 {r}
 data(mtcars)
@@ -31,7 +31,7 @@ am: Transmission type (0 = automatic, 1 = manual)
 wt: Weight of the car
 hp: Horsepower
 
-Regression Analysis
+#Regression Analysis
 Model 1
 
 {r}
@@ -48,12 +48,14 @@ Model 2 includes weight and horsepower as additional predictors.
 The results show that weight and horsepower have a significant impact on MPG. After including these variables, the effect of transmission type becomes smaller, suggesting that differences in fuel efficiency are partly explained by vehicle characteristics.
 
 
-📊 Model Diagnostics
+#📊 Model Diagnostics
 
 {r}
 par(mfrow=c(2,2))
 plot(model2)
-📊 Model Diagnostics Interpretation
+
+
+#📊 Model Diagnostics Interpretation
 The Residuals vs Fitted plot shows no clear pattern, suggesting that the linearity assumption is reasonably satisfied.
 The Normal Q-Q plot indicates that residuals are approximately normally distributed.
 The Scale-Location plot suggests that the variance of residuals is relatively constant.
@@ -61,7 +63,7 @@ The Residuals vs Leverage plot shows no strong influential points.
 Overall, the regression assumptions are reasonably satisfied.
 
 
-📊 Visualization
+#📊 Visualization
 
 {r}
 ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
@@ -73,7 +75,7 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
        color = "Transmission")
 This plot shows that MPG decreases as vehicle weight increases. Manual cars tend to have slightly higher MPG compared to automatic cars, although weight has a stronger effect on fuel efficiency.
 
-Confidence Intervals
+#Confidence Intervals
 
 {r}
 confint(model2)
