@@ -1,6 +1,6 @@
 ---
 title: "Regression Models Project"
-author: "Ruel Barredo Laranjo"
+author: "Ruel Laranjo | Junior Data Scientist "
 date: "`r Sys.Date()`"
 output: html_document
 ---
