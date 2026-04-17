@@ -47,13 +47,13 @@ summary(model2)
 
 Model 2 adjusts for weight (wt) and horsepower (hp). Comparing the adjusted R-squared values suggests that Model 2 explains more variability in MPG and provides a better fit than Model 1.
 
-# 📊 Model Diagnostics
+#  Model Diagnostics
 ```{r}
 par(mfrow=c(2,2))
 plot(model2)
 ```
 
-# 📊 Model Diagnostics Interpretation
+#  Model Diagnostics Interpretation
 The Residuals vs Fitted plot shows no clear pattern, suggesting that the linearity assumption is reasonably satisfied.
 The Normal Q-Q plot indicates that residuals are approximately normally distributed.
 The Scale-Location plot suggests that the variance of residuals is relatively constant.
@@ -61,7 +61,7 @@ The Residuals vs Leverage plot shows no strong influential points.
 Overall, the regression assumptions are reasonably satisfied.
 
 
-# 📊 Visualization
+#  Visualization
 ```{r}
 ggplot(mtcars, aes(x = wt, y = mpg, color = factor(am))) +
   geom_point(size = 3) +
