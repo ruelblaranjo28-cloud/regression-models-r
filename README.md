@@ -46,6 +46,8 @@ This project shows how regression models help identify key factors affecting per
 ---
 
 ##  View Project
-   [View Full Report (HTML)](regression_project.html)
+  [View Full Report (HTML)](regression_project.html)
   [View Source Code on GitHub](https://github.com/ruelblaranjo28-cloud/regression-models-r)
+
+
 
