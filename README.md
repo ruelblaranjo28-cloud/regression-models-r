@@ -1,6 +1,6 @@
 #  Regression Models Project
 
-👤 Author: Ruel Laranjo  
+ Author: Ruel Laranjo  
  Role: Aspiring Data Scientist  
 
 ---
