@@ -1,6 +1,6 @@
 ---
-title: "Regression Models Project"
-author: "Ruel Laranjo | Aspiring Data Scientist"
+title: "Fuel Efficiency Analysis: Impact of Transmission Type"
+author: "Ruel Laranjo"
 date: "`r Sys.Date()`"
 output: html_document
 ---
